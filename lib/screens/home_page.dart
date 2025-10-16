@@ -1,3 +1,8 @@
+import 'package:donut_app_8sc_25_3/tab/burger_tab.dart';
+import 'package:donut_app_8sc_25_3/tab/donut_tab.dart';
+import 'package:donut_app_8sc_25_3/tab/pancake_tab.dart';
+import 'package:donut_app_8sc_25_3/tab/pizza_tab.dart';
+import 'package:donut_app_8sc_25_3/tab/smoothie_tab.dart';
 import 'package:donut_app_8sc_25_3/utils/my_tab.dart';
 import 'package:flutter/material.dart';
 
@@ -63,9 +68,29 @@ class _HomePageState extends State<HomePage> {
           ),
 
           //2. Pestañas o (TabBar)
-          TabBar(tabs: myTabs)
+          TabBar(
+            tabs: myTabs,
+            labelColor: Colors.black,
+            unselectedLabelColor: Colors.grey,
+            indicator: BoxDecoration(
+              border: Border.all(color: Colors.black, width: 2.5),
+              borderRadius: BorderRadius.circular(16),
+            ),
+            indicatorSize: TabBarIndicatorSize.tab,
+            indicatorPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+            dividerColor: Colors.transparent,
+          ),
           //3. Contenido de pestañas(TabBarView)
-          
+          Expanded(
+            child: TabBarView(children: [
+                DonutTab(),
+                BurgerTab(),
+                SmoothieTab(),
+                PanCakeTab(),
+                PizzaTab(),
+            //1. Donut (Donut)
+                    ]),
+          ),
 
           //4. Carrito (Car)
         ],
