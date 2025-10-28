@@ -72,12 +72,12 @@ class _HomePageState extends State<HomePage> {
             tabs: myTabs,
             labelColor: Colors.black,
             unselectedLabelColor: Colors.grey,
-            indicator: BoxDecoration(
-              border: Border.all(color: Colors.black, width: 2.5),
-              borderRadius: BorderRadius.circular(16),
-            ),
+           // indicator: BoxDecoration(
+             // border: Border.all(color: Colors.black, width: 2.5),
+             // borderRadius: BorderRadius.circular(16),
+            //),
             indicatorSize: TabBarIndicatorSize.tab,
-            indicatorPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+           // indicatorPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
             dividerColor: Colors.transparent,
           ),
           //3. Contenido de pestañas(TabBarView)
@@ -91,8 +91,49 @@ class _HomePageState extends State<HomePage> {
             //1. Donut (Donut)
                     ]),
           ),
+             
 
           //4. Carrito (Car)
+          Container(
+            color: Colors.white,
+            padding: EdgeInsets.all(16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+              Padding(padding: EdgeInsets.only(left: 28),
+              child: Column(
+                //se pega a la hizquierda
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                Text('2 Items | \$45', style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+                ),
+                Text('Delivery Charges Included', style: TextStyle(fontSize: 12),
+                ),
+              ],
+              ),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.pink,
+                  padding: EdgeInsets.symmetric(horizontal: 24, 
+                  vertical: 12), 
+                    
+                ),
+                onPressed: (){}, 
+              child: const Text('View Cart',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),)
+              ),
+            ],),
+          )
+
+
+
         ],
       ),
       ),

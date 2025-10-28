@@ -23,11 +23,13 @@ class DonutTab extends StatelessWidget {
         //numero de columnas
         crossAxisCount: 2,
         //relacion de aspecto
-        childAspectRatio: 1 / 1.4,
+        childAspectRatio: 1 / 1.45,
         
       ), 
       itemCount: donutOnSale.length,
       //Lo que se va a contruir en el grid
+
+      
       itemBuilder:(contect, index){
         return DonutTile(
           donutFlavor: donutOnSale[index][0],
